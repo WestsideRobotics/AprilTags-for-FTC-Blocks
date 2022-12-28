@@ -1,6 +1,15 @@
+/*
+ This file is not an FTC OpMode.
+ It contains methods to detect and process AprilTag ID codes in webcam images.
+ 
+ The methods are annotated to become myBlocks, for FTC Blocks programming.
 
-// This is a simplified version of AprilTagBlocksBridge for webcam.
+ This was simplified and converted for webcam, from an original file
+ called AprilTagBlocksBridge.java, shared by @Windwoes.
 
+ Questions, comments and corrections to westsiderobotics@verizon.net
+
+*/
 
 package org.firstinspires.ftc.teamcode;
 
@@ -18,6 +27,8 @@ import java.util.ArrayList;
 
 public class AprilTagSimpleBlocksWebcam
 {
+
+    // Declare class for holder object to contain pipeline & camera instances
     public static class BlocksContext
     {
         AprilTagDetectionPipeline pipeline;
@@ -27,10 +38,10 @@ public class AprilTagSimpleBlocksWebcam
 
     // this annotation creates the myBlock "createAprilTagDetector"
     @ExportToBlocks ( 
-        comment = "Create a pipeline for AprilTag detection.  Use this Block " +
+        comment = "Create a pipeline/camera object for AprilTag detection.  Use this Block " +
                   "in the INIT section of the OpMode, before startAprilTagDetector. " +
                   "Parameter values are not critical for simple tag ID detection.",
-        tooltip = "Create an AprilTag detection pipeline",
+        tooltip = "Create an AprilTag detection pipeline/camera object",
         parameterLabels = {"hardwareMap", "tag size (mm)", "fx", "fy", "cx", "cy"},
         parameterDefaultValues = {"null", "75", "1000", "1000", "200", "200"}
         )
@@ -40,44 +51,48 @@ public class AprilTagSimpleBlocksWebcam
         int cameraMonitorViewId = hardwareMap.appContext.getResources().getIdentifier
             ("cameraMonitorViewId", "id", hardwareMap.appContext.getPackageName());
 
-        // Tag size (millimeters) is measured along one edge.  OpenCV uses meters.
+        // Tag size (millimeters) is measured along one edge.  AprilTag uses meters.
         double tagSizeMeter = tagSizeMm / 1000;
         
+        // create a holder object containing a pipeline instance & camera instance
         BlocksContext ctx = new BlocksContext();
 
         // identify the configured webcam
         ctx.camera = OpenCvCameraFactory.getInstance().createWebcam(hardwareMap.get
             (WebcamName.class, "Webcam 1"), cameraMonitorViewId);   
 
-        // create the pipeline
+        // Create the pipeline.  See note below.
         ctx.pipeline = new AprilTagDetectionPipeline(tagSizeMeter, fx, fy, cx, cy);
 
-        // fx, fy, cx and cy are 'lens intrinsics' obtained from camera calibration
-        // and choice of resolution.  Needed for pose info (position and orientation).
-
-        // Examples from https://github.com/FIRST-Tech-Challenge/FtcRobotController/
-        // blob/master/TeamCode/src/main/res/xml/teamwebcamcalibrations.xml
-    
-        // Logitech HD webcam C270 at 640 x 480
-        // Focal length fx = 822.317, fy = 822.317
-        // Principal point cx = 319.495, cy = 242.502
-
-        // Logitech webcam C920 at 800 x 448
-        // Focal length fx = 578.272, fy = 578.272
-        // Principal point cx = 402.145, cy = 221.506
-
-        // provide the pipeline to the OpMode
+        // provide the pipeline/camera object to the OpMode
         return ctx;
-        
+
+
+        /*
+         fx, fy, cx and cy are 'lens intrinsics' obtained from camera calibration
+         and choice of resolution.  Needed for pose info (position and orientation).
+
+         Examples from https://github.com/FIRST-Tech-Challenge/FtcRobotController/
+         blob/master/TeamCode/src/main/res/xml/teamwebcamcalibrations.xml
+    
+         Logitech HD webcam C270 at 640 x 480
+         Focal length fx = 822.317, fy = 822.317
+         Principal point cx = 319.495, cy = 242.502
+
+         Logitech webcam C920 at 800 x 448
+         Focal length fx = 578.272, fy = 578.272
+         Principal point cx = 402.145, cy = 221.506
+        */
+
     }   // end method createAprilTagDetector()
 
 
     // this annotation creates the myBlock "startAprilTagDetector"
     @ExportToBlocks(
-         comment = "Begin operating the pipeline for AprilTag detection.  Use this Block " +
-                   "in the INIT section of the OpMode, after createAprilTagDetector. " +
+         comment = "Begin operating camera/stream/pipeline for AprilTag detection. " +
+                   "Use this Block in INIT section of OpMode, after createAprilTagDetector. " +
                    "Must use a resolution supported by the webcam.",
-        tooltip = "Begin operating an AprilTag detection pipeline",
+        tooltip = "Begin operating AprilTag detection camera/stream/pipeline",
         parameterLabels = {"AprilTagDetector", "width", "height"},
         parameterDefaultValues = {"null", "640", "480"}
         )
@@ -174,8 +189,15 @@ public class AprilTagSimpleBlocksWebcam
     )
     public static void closeAprilTagDetector(BlocksContext ctx)
     {
-        // close access to the webcam
-        ctx.camera.closeCameraDevice();
+        // Close access to webcam. This is faster than synchronous closeCameraDevice().
+        ctx.camera.closeCameraDeviceAsync(new OpenCvCamera.AsyncCameraCloseListener() {
+            
+            @Override
+            public void onClose() {
+             
+            }
+        });
+        
     }   // end method closeAprilTagDetector()
 
 
