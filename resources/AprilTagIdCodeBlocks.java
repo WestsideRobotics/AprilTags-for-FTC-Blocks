@@ -55,7 +55,7 @@ public class AprilTagIdCodeBlocks
 
     // this annotation creates the myBlock "createAprilTagDetectorWebcam"
     @ExportToBlocks ( 
-        heading = "Use this for webcam",
+        heading = "Create pipeline, for webcam only",
         comment = "Create a pipeline/webcam object for AprilTag ID code detection. " +
                   "Specify name of webcam in active configuration.  Use this myBlock " +
                   "in INIT section of OpMode, before startAprilTagDetector.",
@@ -99,7 +99,7 @@ public class AprilTagIdCodeBlocks
 
     // this annotation creates the myBlock "createAprilTagDetectorPhoneCam"
     @ExportToBlocks ( 
-        heading = "Use this for RC phone camera",
+        heading = "Create pipeline, for RC phone camera",
         comment = "Create a pipeline/camera object for AprilTag ID code detection. " +
                   "Use this for internal Robot Controller phone camera, not webcam.  Place " +
                   "this myBlock in INIT section of OpMode, before startAprilTagDetector.",
@@ -139,7 +139,7 @@ public class AprilTagIdCodeBlocks
 
     // this annotation creates the myBlock "startAprilTagDetectorWebcam"
     @ExportToBlocks(
-        heading = "Use this for webcam",
+        heading = "Start pipeline, for webcam only",
         comment = "Begin operating webcam/stream/pipeline for AprilTag detection. " +
                    "Must specify a resolution supported by the webcam. " +
                    "Use this myBlock in INIT section of OpMode, after createAprilTagDetector.",
@@ -170,7 +170,7 @@ public class AprilTagIdCodeBlocks
 
     // this annotation creates the myBlock "startAprilTagDetectorPhoneCam"
     @ExportToBlocks(
-        heading = "Use this for Robot Controller camera",
+        heading = "Start pipeline, for RC phone camera",
         comment = "Begin operating camera/stream/pipeline for AprilTag detection. " +
                    "Must specify a resolution supported by the RC phone camera. " +
                    "Use this myBlock in INIT section of OpMode, after createAprilTagDetector.",
@@ -266,7 +266,7 @@ public class AprilTagIdCodeBlocks
 
     // this annotation creates the myBlock "closeAprilTagDetectorWebcam"
     @ExportToBlocks(
-        heading = "Use this for webcam",
+        heading = "Close pipeline, for webcam only",
         comment = "Close/disable the designated AprilTag pipeline, to free up " +
                   "CPU resources. Use this after saving all needed AprilTag info.",
         tooltip = "Close the AprilTag pipeline",
@@ -289,7 +289,7 @@ public class AprilTagIdCodeBlocks
 
     // this annotation creates the myBlock "closeAprilTagDetectorPhoneCam"
     @ExportToBlocks(
-        heading = "Use this for Robot Controller phone",
+        heading = "Close pipeline, for RC phone camera",
         comment = "Close/disable the designated AprilTag pipeline, to free up " +
                   "CPU resources. Use this after saving all needed AprilTag info.",
         tooltip = "Close the AprilTag pipeline",
