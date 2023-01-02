@@ -37,24 +37,6 @@
 <block type="logic_operation" id="!~bCEVnWZ1hiQg5fc$e|" inline="false">
 <field name="OP">AND</field>
 <value name="A">
-<block type="logic_operation" id="@:z];29$uB*OF-3_PKk3" inline="false">
-<field name="OP">AND</field>
-<value name="A">
-<block type="logic_compare" id="QOTnV,F/Uq4i^b8J=BiK">
-<field name="OP">NEQ</field>
-<value name="A">
-<block type="variables_get" id="tSCK1FPfZ%mLPFN^}M[U">
-<field name="VAR" id=")H47Qs?`y3(Qg`e]t2U{">numberOfDetections</field>
-</block>
-</value>
-<value name="B">
-<block type="math_number" id="sk~#1na`;%+AKhi`nzAE">
-<field name="NUM">1</field>
-</block>
-</value>
-</block>
-</value>
-<value name="B">
 <block type="logic_compare" id="(N+WHO;r)t)$gItp{lGg">
 <field name="OP">LT</field>
 <value name="A">
@@ -74,6 +56,22 @@
 </value>
 </block>
 </value>
+<value name="B">
+<block type="logic_operation" id="@:z];29$uB*OF-3_PKk3" inline="false">
+<field name="OP">AND</field>
+<value name="A">
+<block type="logic_compare" id="QOTnV,F/Uq4i^b8J=BiK">
+<field name="OP">NEQ</field>
+<value name="A">
+<block type="variables_get" id="tSCK1FPfZ%mLPFN^}M[U">
+<field name="VAR" id=")H47Qs?`y3(Qg`e]t2U{">numberOfDetections</field>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="sk~#1na`;%+AKhi`nzAE">
+<field name="NUM">1</field>
+</block>
+</value>
 </block>
 </value>
 <value name="B">
@@ -81,13 +79,15 @@
 </value>
 </block>
 </value>
+</block>
+</value>
 <statement name="DO">
 <block type="variables_set" id="A7ZfYg@oLhQoBcHD/?k,">
 <field name="VAR" id="~N.qUejj3BkfKAVhaR`$">allDetections</field>
 <value name="VALUE">
-<block type="misc_callJava_return" id=".I6QsAiU_nW?=3nC2@Oo">
-<mutation createDropdownFunctionName="" methodLookupString="org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks getAllDetections(org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks$BlocksContext) java.util.ArrayList" fullClassName="org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks" simpleName="AprilTagIdCodeBlocks" parameterCount="1" returnType="java.util.ArrayList" color="289" heading="call Java method" comment="Provide the data from any and all detetected AprilTags. Use this myBlock anywhere in the OpMode, after startAprilTagDetector. " tooltip="Get data from all detected AprilTags" accessMethod="callJava" convertReturnValue="" argLabel0="AprilTagDetector" argType0="org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks$BlocksContext" argAuto0=""/>
-<field name="CLASS_NAME">AprilTagIdCodeBlocks</field>
+<block type="misc_callJava_return" id="k0yuFHgbfuOJr8M^;fXw">
+<mutation createDropdownFunctionName="" methodLookupString="org.firstinspires.ftc.teamcode.AprilTagIdCode getAllDetections(org.firstinspires.ftc.teamcode.AprilTagIdCode$BlocksContext) java.util.ArrayList" fullClassName="org.firstinspires.ftc.teamcode.AprilTagIdCode" simpleName="AprilTagIdCode" parameterCount="1" returnType="java.util.ArrayList" color="289" heading="call Java method" comment="Provide the data from any and all detetected AprilTags. Use this myBlock anywhere in the OpMode, after startAprilTagDetector. " tooltip="Get data from all detected AprilTags" accessMethod="callJava" convertReturnValue="" argLabel0="AprilTagDetector" argType0="org.firstinspires.ftc.teamcode.AprilTagIdCode$BlocksContext" argAuto0=""/>
+<field name="CLASS_NAME">AprilTagIdCode</field>
 <field name="METHOD_NAME">getAllDetections</field>
 <comment pinned="false" h="80" w="160">Provide the data from any and all detetected AprilTags. Use this myBlock anywhere in the OpMode, after startAprilTagDetector.</comment>
 <value name="ARG0">
@@ -101,9 +101,9 @@
 <block type="variables_set" id="$40u2B/))1B,E|-XO::_">
 <field name="VAR" id=")H47Qs?`y3(Qg`e]t2U{">numberOfDetections</field>
 <value name="VALUE">
-<block type="misc_callJava_return" id="//S^_RjJMDbAOd#02*Ts">
-<mutation createDropdownFunctionName="" methodLookupString="org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks getHowManyDetections(java.util.ArrayList) int" fullClassName="org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks" simpleName="AprilTagIdCodeBlocks" parameterCount="1" returnType="int" color="155" heading="call Java method" comment="Provide the number of detections in the current batch. Use this myBlock anywhere in the OpMode, after getAllDetections. " tooltip="Get the number of current detections" accessMethod="callJava_String" convertReturnValue="Number" argLabel0="AprilTagDetections" argType0="java.util.ArrayList" argAuto0=""/>
-<field name="CLASS_NAME">AprilTagIdCodeBlocks</field>
+<block type="misc_callJava_return" id="Z@l2(#HJVa88x;qu_6fb">
+<mutation createDropdownFunctionName="" methodLookupString="org.firstinspires.ftc.teamcode.AprilTagIdCode getHowManyDetections(java.util.ArrayList) int" fullClassName="org.firstinspires.ftc.teamcode.AprilTagIdCode" simpleName="AprilTagIdCode" parameterCount="1" returnType="int" color="155" heading="call Java method" comment="Provide the number of detections in the current batch. Use this myBlock anywhere in the OpMode, after getAllDetections. " tooltip="Get the number of current detections" accessMethod="callJava_String" convertReturnValue="Number" argLabel0="AprilTagDetections" argType0="java.util.ArrayList" argAuto0=""/>
+<field name="CLASS_NAME">AprilTagIdCode</field>
 <field name="METHOD_NAME">getHowManyDetections</field>
 <comment pinned="false" h="80" w="160">Provide the number of detections in the current batch. Use this myBlock anywhere in the OpMode, after getAllDetections.</comment>
 <value name="ARG0">
@@ -123,10 +123,10 @@
 </block>
 </statement>
 <next>
-<block type="misc_callJava_noReturn" id=",1!awUO;ZmGFaLYq_D0/">
-<mutation createDropdownFunctionName="" methodLookupString="org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks closeAprilTagDetectorWebcam(org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks$BlocksContext) void" fullClassName="org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks" simpleName="AprilTagIdCodeBlocks" parameterCount="1" returnType="void" color="289" heading="Close pipeline, for webcam only" comment="Close/disable the designated AprilTag pipeline, to free up CPU resources. Use this after saving all needed AprilTag info." tooltip="Close the AprilTag pipeline" accessMethod="callJava" convertReturnValue="" argLabel0="AprilTag Detector" argType0="org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks$BlocksContext" argAuto0=""/>
-<field name="CLASS_NAME">AprilTagIdCodeBlocks</field>
-<field name="METHOD_NAME">closeAprilTagDetectorWebcam</field>
+<block type="misc_callJava_noReturn" id="lk*$XCe-DA^8[|b,p*jp">
+<mutation createDropdownFunctionName="" methodLookupString="org.firstinspires.ftc.teamcode.AprilTagIdCode closeAprilTagDetector(org.firstinspires.ftc.teamcode.AprilTagIdCode$BlocksContext) void" fullClassName="org.firstinspires.ftc.teamcode.AprilTagIdCode" simpleName="AprilTagIdCode" parameterCount="1" returnType="void" color="289" heading="call Java method" comment="Close/disable the designated AprilTag pipeline, to free up CPU resources. Use this after saving all needed AprilTag info." tooltip="Close the AprilTag pipeline" accessMethod="callJava" convertReturnValue="" argLabel0="AprilTag Detector" argType0="org.firstinspires.ftc.teamcode.AprilTagIdCode$BlocksContext" argAuto0=""/>
+<field name="CLASS_NAME">AprilTagIdCode</field>
+<field name="METHOD_NAME">closeAprilTagDetector</field>
 <comment pinned="false" h="80" w="160">Close/disable the designated AprilTag pipeline, to free up CPU resources. Use this after saving all needed AprilTag info.</comment>
 <value name="ARG0">
 <block type="variables_get" id="}/i2VTy%D$aYl4`S2T%;">
@@ -226,43 +226,43 @@
 </block>
 </statement>
 </block>
-<block type="procedures_defnoreturn" id="Mh4K)jy!1@9T-Gnb%-0x" x="3828" y="843">
+<block type="procedures_defnoreturn" id="Mh4K)jy!1@9T-Gnb%-0x" x="3762" y="843">
 <field name="NAME">Initializations</field>
 <comment pinned="false" h="80" w="160">Describe this function...</comment>
 <statement name="STACK">
 <block type="variables_set" id="q.lS6;XvbYe?MAr+]zZ]">
 <field name="VAR" id="@lk(Fq(tG!?hf^.(H5:Q">myDetector</field>
 <value name="VALUE">
-<block type="misc_callJava_return" id="dvdC(^.-St31zHgExR_1">
-<mutation createDropdownFunctionName="" methodLookupString="org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks createAprilTagDetectorWebcam(com.qualcomm.robotcore.hardware.HardwareMap,java.lang.String) org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks$BlocksContext" fullClassName="org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks" simpleName="AprilTagIdCodeBlocks" parameterCount="2" returnType="org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks$BlocksContext" color="289" heading="Create pipeline, for webcam only" comment="Create a pipeline/webcam object for AprilTag ID code detection. Specify name of webcam in active configuration.  Use this myBlock in INIT section of OpMode, before startAprilTagDetector." tooltip="Create an AprilTag ID code detection pipeline/webcam object" accessMethod="callJava" convertReturnValue="" argLabel0="null" argType0="com.qualcomm.robotcore.hardware.HardwareMap" argAuto0="hardwareMap" argLabel1="Configured webcam name" argType1="java.lang.String" argAuto1=""/>
-<field name="CLASS_NAME">AprilTagIdCodeBlocks</field>
-<field name="METHOD_NAME">createAprilTagDetectorWebcam</field>
-<comment pinned="false" h="80" w="160">Create a pipeline/webcam object for AprilTag ID code detection. Specify name of webcam in active configuration.  Use this myBlock in INIT section of OpMode, before startAprilTagDetector.</comment>
+<block type="misc_callJava_return" id="R3%d5]x[2`gDlh-DB-uo">
+<mutation createDropdownFunctionName="" methodLookupString="org.firstinspires.ftc.teamcode.AprilTagIdCode createAprilTagDetector(com.qualcomm.robotcore.hardware.HardwareMap,java.lang.String) org.firstinspires.ftc.teamcode.AprilTagIdCode$BlocksContext" fullClassName="org.firstinspires.ftc.teamcode.AprilTagIdCode" simpleName="AprilTagIdCode" parameterCount="2" returnType="org.firstinspires.ftc.teamcode.AprilTagIdCode$BlocksContext" color="289" heading="FOR WEBCAM ONLY" comment="Create a pipeline/webcam object for AprilTag ID code detection. Edit configured webcam name as needed.  Use this myBlock in INIT section of OpMode, before startAprilTagDetector." tooltip="Create an AprilTag ID code detection pipeline/webcam object" accessMethod="callJava" convertReturnValue="" argLabel0="null" argType0="com.qualcomm.robotcore.hardware.HardwareMap" argAuto0="hardwareMap" argLabel1="Configured webcam name" argType1="java.lang.String" argAuto1=""/>
+<field name="CLASS_NAME">AprilTagIdCode</field>
+<field name="METHOD_NAME">createAprilTagDetector</field>
+<comment pinned="false" h="80" w="160">Create a pipeline/webcam object for AprilTag ID code detection. Edit configured webcam name as needed.  Use this myBlock in INIT section of OpMode, before startAprilTagDetector.</comment>
 <value name="ARG1">
-<shadow type="text" id="7JXQoBE,,3=;`kLNwNlz">
+<shadow type="text" id="klO)-S3Y;[:6_UeV5vXI">
 <field name="TEXT">Webcam 1</field>
 </shadow>
 </value>
 </block>
 </value>
 <next>
-<block type="misc_callJava_noReturn" id="4Q)a@LV@P{SVt`j2,L7D">
-<mutation createDropdownFunctionName="" methodLookupString="org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks startAprilTagDetectorWebcam(org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks$BlocksContext,int,int) void" fullClassName="org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks" simpleName="AprilTagIdCodeBlocks" parameterCount="3" returnType="void" color="289" heading="Start pipeline, for webcam only" comment="Begin operating webcam/stream/pipeline for AprilTag detection. Must specify a resolution supported by the webcam. Use this myBlock in INIT section of OpMode, after createAprilTagDetector." tooltip="Begin operating AprilTag detection webcam/stream/pipeline" accessMethod="callJava" convertReturnValue="" argLabel0="AprilTagDetector" argType0="org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks$BlocksContext" argAuto0="" argLabel1="width (pixels)" argType1="int" argAuto1="" argLabel2="height (pixels)" argType2="int" argAuto2=""/>
-<field name="CLASS_NAME">AprilTagIdCodeBlocks</field>
-<field name="METHOD_NAME">startAprilTagDetectorWebcam</field>
-<comment pinned="false" h="80" w="160">Begin operating webcam/stream/pipeline for AprilTag detection. Must specify a resolution supported by the webcam. Use this myBlock in INIT section of OpMode, after createAprilTagDetector.</comment>
+<block type="misc_callJava_noReturn" id="@#.q3BG;N2tP:Jdi{]*O">
+<mutation createDropdownFunctionName="" methodLookupString="org.firstinspires.ftc.teamcode.AprilTagIdCode startAprilTagDetector(org.firstinspires.ftc.teamcode.AprilTagIdCode$BlocksContext,int,int) void" fullClassName="org.firstinspires.ftc.teamcode.AprilTagIdCode" simpleName="AprilTagIdCode" parameterCount="3" returnType="void" color="289" heading="call Java method" comment="Begin operating camera/stream/pipeline for AprilTag detection. Must specify a resolution supported by the camera; edit these default values as desired.  Use this myBlock in INIT section of OpMode, after createAprilTagDetector." tooltip="Begin operating AprilTag detection camera/stream/pipeline" accessMethod="callJava" convertReturnValue="" argLabel0="AprilTagDetector" argType0="org.firstinspires.ftc.teamcode.AprilTagIdCode$BlocksContext" argAuto0="" argLabel1="width (pixels)" argType1="int" argAuto1="" argLabel2="height (pixels)" argType2="int" argAuto2=""/>
+<field name="CLASS_NAME">AprilTagIdCode</field>
+<field name="METHOD_NAME">startAprilTagDetector</field>
+<comment pinned="false" h="80" w="160">Begin operating camera/stream/pipeline for AprilTag detection. Must specify a resolution supported by the camera; edit these default values as desired.  Use this myBlock in INIT section of OpMode, after createAprilTagDetector.</comment>
 <value name="ARG0">
 <block type="variables_get" id="MzVnVC^?^d2ETyRFO.X[">
 <field name="VAR" id="@lk(Fq(tG!?hf^.(H5:Q">myDetector</field>
 </block>
 </value>
 <value name="ARG1">
-<shadow type="math_number" id="U]r},ZU=Popr.%z10Ay,">
+<shadow type="math_number" id="3/Zy#z4(O4,OKAx~tsCn">
 <field name="NUM">640</field>
 </shadow>
 </value>
 <value name="ARG2">
-<shadow type="math_number" id="l{MzS!4;ald^PMIs1n!;">
+<shadow type="math_number" id="O,~%fg!n;*-G]K.C_]lS">
 <field name="NUM">480</field>
 </shadow>
 </value>
@@ -291,7 +291,7 @@
 </block>
 </statement>
 </block>
-<block type="procedures_defnoreturn" id="4#Ee_DxOsJp?^XDP[8m^" x="3832" y="1162">
+<block type="procedures_defnoreturn" id="4#Ee_DxOsJp?^XDP[8m^" x="3761" y="1164">
 <field name="NAME">Evaluate detections</field>
 <comment pinned="false" h="80" w="160">Describe this function...</comment>
 <statement name="STACK">
@@ -359,9 +359,9 @@
 <block type="variables_set" id="%d~RDhZk!b|(-h;TN4,r">
 <field name="VAR" id="5b#,6O[YMb)TSm@-3]DP">singleDetection</field>
 <value name="VALUE">
-<block type="misc_callJava_return" id="X4vkcQ}QXy3p(ZY`7Svf">
-<mutation createDropdownFunctionName="" methodLookupString="org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks getOneDetection(java.util.ArrayList,int) org.openftc.apriltag.AprilTagDetection" fullClassName="org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks" simpleName="AprilTagIdCodeBlocks" parameterCount="2" returnType="org.openftc.apriltag.AprilTagDetection" color="289" heading="call Java method" comment="Provide the data from only the first detection in the current batch.  This myBlock is helpful when you know there's only one AprilTag detected.  Use it anywhere, after getAllDetections. This will crash if the input detections list is empty." tooltip="Get data from a single detected AprilTag" accessMethod="callJava" convertReturnValue="" argLabel0="AprilTagDetections" argType0="java.util.ArrayList" argAuto0="" argLabel1="index" argType1="int" argAuto1=""/>
-<field name="CLASS_NAME">AprilTagIdCodeBlocks</field>
+<block type="misc_callJava_return" id="WhDNBQ,qwTJ2h+S6Z$Yo">
+<mutation createDropdownFunctionName="" methodLookupString="org.firstinspires.ftc.teamcode.AprilTagIdCode getOneDetection(java.util.ArrayList,int) org.openftc.apriltag.AprilTagDetection" fullClassName="org.firstinspires.ftc.teamcode.AprilTagIdCode" simpleName="AprilTagIdCode" parameterCount="2" returnType="org.openftc.apriltag.AprilTagDetection" color="289" heading="call Java method" comment="Provide the data from only the first detection in the current batch.  This myBlock is helpful when you know there's only one AprilTag detected.  Use it anywhere, after getAllDetections. This will crash if the input detections list is empty." tooltip="Get data from a single detected AprilTag" accessMethod="callJava" convertReturnValue="" argLabel0="AprilTagDetections" argType0="java.util.ArrayList" argAuto0="" argLabel1="index" argType1="int" argAuto1=""/>
+<field name="CLASS_NAME">AprilTagIdCode</field>
 <field name="METHOD_NAME">getOneDetection</field>
 <comment pinned="false" h="80" w="160">Provide the data from only the first detection in the current batch.  This myBlock is helpful when you know there's only one AprilTag detected.  Use it anywhere, after getAllDetections. This will crash if the input detections list is empty.</comment>
 <value name="ARG0">
@@ -370,7 +370,7 @@
 </block>
 </value>
 <value name="ARG1">
-<shadow type="math_number" id="PWVm$6?f}.3)?J3ULZIE">
+<shadow type="math_number" id=",/Y:a-],{mO!@H;V*KT-">
 <field name="NUM">0</field>
 </shadow>
 </value>
@@ -380,9 +380,9 @@
 <block type="variables_set" id="{@6?@B.Fm=ByN]O{G6q4">
 <field name="VAR" id="w|09p-uCT3Nt-Y3(tv16">detectedID</field>
 <value name="VALUE">
-<block type="misc_callJava_return" id="o)Xp-!d{#Fxh]4H3a[f+">
-<mutation createDropdownFunctionName="" methodLookupString="org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks getID(org.openftc.apriltag.AprilTagDetection) double" fullClassName="org.firstinspires.ftc.teamcode.AprilTagIdCodeBlocks" simpleName="AprilTagIdCodeBlocks" parameterCount="1" returnType="double" color="155" heading="call Java method" comment="Provide the AprilTag ID code from the designated detection. Use this myBlock anywhere, after getOneDetection." tooltip="Get AprilTag ID code" accessMethod="callJava_String" convertReturnValue="Number" argLabel0="Detection" argType0="org.openftc.apriltag.AprilTagDetection" argAuto0=""/>
-<field name="CLASS_NAME">AprilTagIdCodeBlocks</field>
+<block type="misc_callJava_return" id="b(Wf,s)tYVn7$8c0)}i^">
+<mutation createDropdownFunctionName="" methodLookupString="org.firstinspires.ftc.teamcode.AprilTagIdCode getID(org.openftc.apriltag.AprilTagDetection) double" fullClassName="org.firstinspires.ftc.teamcode.AprilTagIdCode" simpleName="AprilTagIdCode" parameterCount="1" returnType="double" color="155" heading="call Java method" comment="Provide the AprilTag ID code from the designated detection. Use this myBlock anywhere, after getOneDetection." tooltip="Get AprilTag ID code" accessMethod="callJava_String" convertReturnValue="Number" argLabel0="Detection" argType0="org.openftc.apriltag.AprilTagDetection" argAuto0=""/>
+<field name="CLASS_NAME">AprilTagIdCode</field>
 <field name="METHOD_NAME">getID</field>
 <comment pinned="false" h="80" w="160">Provide the AprilTag ID code from the designated detection. Use this myBlock anywhere, after getOneDetection.</comment>
 <value name="ARG0">
@@ -419,7 +419,7 @@
 </block>
 </statement>
 </block>
-<block type="procedures_defnoreturn" id="1^gt9XN.qk!ss!|k$55W" x="4450" y="1270">
+<block type="procedures_defnoreturn" id="1^gt9XN.qk!ss!|k$55W" x="3471" y="1387">
 <field name="NAME">Park in Zone 1</field>
 <comment pinned="false" h="80" w="160">Describe this function...</comment>
 <statement name="STACK">
@@ -428,7 +428,7 @@
 </block>
 </statement>
 </block>
-<block type="procedures_defnoreturn" id="17Ad+aZX[FQ1:420*Z7-" x="4506" y="1352">
+<block type="procedures_defnoreturn" id="17Ad+aZX[FQ1:420*Z7-" x="3471" y="1482">
 <field name="NAME">Park in Zone 2</field>
 <comment pinned="false" h="80" w="160">Describe this function...</comment>
 <statement name="STACK">
@@ -437,7 +437,7 @@
 </block>
 </statement>
 </block>
-<block type="procedures_defnoreturn" id="UoAO}m.~zn7l[dFVpo$`" x="4580" y="1432">
+<block type="procedures_defnoreturn" id="UoAO}m.~zn7l[dFVpo$`" x="3471" y="1573">
 <field name="NAME">Park in Zone 3</field>
 <comment pinned="false" h="80" w="160">Describe this function...</comment>
 <statement name="STACK">
